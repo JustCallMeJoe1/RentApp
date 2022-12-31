@@ -1,0 +1,82 @@
+/*
+
+    Author: Joe Strickland
+    CSS for Rent App
+    Date: December 31st, 2022
+
+*/
+
+body {
+    background-color: #e4e4e4;
+    margin: 0px;
+    padding: 0px;
+    font-family: "Sitka Small", "Times New Roman", Times, serif, Arial;
+}
+
+#container {
+    display: flex;
+    justify-content: center;
+    align-self: center;
+}
+
+#errorWrapper {
+    margin-top: 1%;
+    background-color: #ff7777;
+    width: 50%;
+    border: 3px black solid;
+    padding: 30px;
+}
+
+#errorHeader {
+    text-align: center;
+}
+
+#errorMessage {
+    text-align: center;
+}
+
+#selectWrapper {
+    margin-top: 1%;
+    background-color: #ffbc86;
+    text-align: center;
+    border: 3px black solid;
+    padding: 30px;
+}
+
+.selectButton {
+    padding: 10px;
+    border: 2px solid rgb(143, 29, 29);
+    background-color: rgb(143, 29, 29);
+    color: rgb(255, 255, 255);
+}
+
+.selectButton:hover {
+    cursor: pointer;
+    background-color: rgb(175, 36, 36);
+}
+
+hr {
+    border: 1px solid black;
+}
+
+#buttons {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 5%;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+#flex-header {
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    margin-top: 1%;
+}
+
+#homeText {
+    margin-left: 15%;
+}

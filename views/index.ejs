@@ -1,0 +1,25 @@
+<!--
+
+    Author: Joe Strickland
+    EJS Template page for index page
+    Date: December 31st, 2022
+
+-->
+<%- include("./partials/header.ejs") %>
+    <body>
+        <main id="container">
+            <div id="selectWrapper">
+                <h1 id="header">Please choose an option.</h1>
+                <hr />
+                <div id="buttons">
+                    <div>
+                        <a href="/newReport"><button class="selectButton">New Report</button></a>
+                    </div>
+                    <br />
+                    <div>
+                        <a href="/prevReport"><button class="selectButton">View Previous Reports</button></a>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </body>

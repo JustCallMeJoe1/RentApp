@@ -1,0 +1,16 @@
+<!--
+
+    Author: Joe Strickland
+    EJS Template page for error page
+    Date: December 31st, 2022
+
+-->
+<%- include("./partials/header.ejs") %>
+    <body>
+        <main id="container">
+            <div id="errorWrapper">
+                <h1 id="errorHeader">Server side error. Please check logs.</h1>
+                <p id="errorMessage"><%= error.message %></p>
+            </div>
+        </main>
+    </body>
