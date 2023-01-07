@@ -62,7 +62,7 @@ hr {
 #buttons {
     display: flex;
     justify-content: space-evenly;
-    margin-top: 5%;
+    margin-top: 5;
 }
 
 a {
@@ -79,4 +79,8 @@ a {
 
 #homeText {
     margin-left: 15%;
+}
+
+.siteHeader {
+    text-align: center;
 }

@@ -13,6 +13,7 @@ const session = require("express-session");
 const MongoStore = require("connect-mongo");
 const methodOverride = require("method-override");
 const homeRoutes = require("./routes/homeRoutes");
+const newRoutes = require("./routes/newRoutes");
 
 //Configure application instance settings so that app runs correctly
 const app = express();
@@ -61,6 +62,8 @@ app.use(session({
 
 //==============Set up initial Routing to different webpages throughout the web server============================
 app.use("/", homeRoutes)
+
+app.use("/newReport", newRoutes)
 
 app.use((req, res, next) => {                  //Error handling middleware (404)
     let err = new Error("Server cannot locate the file specified by the user via " + req.url);

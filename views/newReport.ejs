@@ -1,0 +1,92 @@
+<!--
+
+    Author: Joe Strickland
+    EJS Template page for new report page
+    Date: January 7th, 2023
+
+-->
+<%- include("./partials/header.ejs") %>
+    <body>
+        <h2 class="siteHeader">Please enter in the monthly rent costs...</h2>
+        <main id="container">
+            <form id="newForm" method="post" action="/newReport">
+                <fieldset class="formSection">
+                    <legend class="sectionLegend">New Report:</legend>
+                    <label class="textLabel" for="month">Select Billing Month: </label>
+                    <select name="month" id="month">
+                        <option value="January">January</option>
+                        <option value="February">February</option>
+                        <option value="March">March</option>
+                        <option value="April">April</option>
+                        <option value="May">May</option>
+                        <option value="June">June</option>
+                        <option value="July">July</option>
+                        <option value="August">August</option>
+                        <option value="September">September</option>
+                        <option value="October">October</option>
+                        <option value="November">November</option>
+                        <option value="December">December</option>
+                    </select>
+                    <fieldset class="formSection">
+                        <legend class="sectionLegend">Current Month Costs:</legend>
+                        <div class="formComp" id="firstSection">
+                            <label class="textLabel" for="rent">Rent Cost: </label>
+                            <input type="text" id="rent" minlength="1" maxlength="20" name="rent" placeholder="Enter rent cost here..." required />
+                            <br />
+                            <label class="textLabel" for="cable">Cable Charge Cost: </label>
+                            <input type="text" id="cable" minlength="1" maxlength="20" name="cable" placeholder="Enter cable cost here..." required />
+                            <br />
+                            <label class="textLabel" for="trash">Trash Service Charge: </label>
+                            <input type="text" id="trash" minlength="1" maxlength="20" name="trash" placeholder="Enter trash service charge here..." required />
+                            <br />
+                            <label class="textLabel" for="amenity">Amenity Fee Charge: </label>
+                            <input type="text" id="amenity" minlength="1" maxlength="20" name="amenity" placeholder="Enter amenity fee here..." required />
+                            <br />
+                            <label class="textLabel" for="alarm">Alarm Income Fee: </label>
+                            <input type="text" id="alarm" minlength="1" maxlength="20" name="alarm" placeholder="Enter alarm income fee here..." required />
+                            <br />
+                            <label class="textLabel" for="d2d">Door 2 Door Package Delivery Fee: </label>
+                            <input type="text" id="d2d" minlength="1" maxlength="20" name="d2d" placeholder="Enter Door 2 Door Package Delivery fee here..." required />
+                            <br />
+                            <label class="textLabel" for="insurance">Renters Insurance Fee: </label>
+                            <input type="text" id="insurance" minlength="1" maxlength="20" name="insurance" placeholder="Enter Renters Insurance Fee..." />
+                            <br />
+                            <label class="textLabel" for="electricity">Electricity Charge: </label>
+                            <input type="text" id="electricity" minlength="1" maxlength="20" name="electricity" placeholder="Enter Electricity Fee..." required />
+                        </div>
+                    </fieldset>
+                    <br />
+                    <hr />
+                    <br />
+                    <fieldset class="formSection">
+                        <legend class="sectionLegend">Advancement Fees (3 Months):</legend>                    
+                        <div class="formComp" id="secondSection">
+                            <label class="textLabel" for="pest">Pest Control Charge: </label>
+                            <input type="text" id="pest" minlength="1" maxlength="20" name="pest" placeholder="Enter Pest Control Charge..." required />
+                            <br />
+                            <label class="textLabel" for="water">Water Charge: </label>
+                            <input type="text" id="water" minlength="1" maxlength="20" name="water" placeholder="Enter Water Fee..." required />
+                            <br />
+                            <label class="textLabel" for="billing">Billing Charge: </label>
+                            <input type="text" id="billing" minlength="1" maxlength="20" name="billing" placeholder="Enter Billing Fee..." required />
+                            <br />
+                            <label class="textLabel" for="storm">Stormwater Charge: </label>
+                            <input type="text" id="storm" minlength="1" maxlength="20" name="storm" placeholder="Enter Stormwater Fee..." required />
+                            <br />
+                            <label class="textLabel" for="trash">Trash Charge: </label>
+                            <input type="text" id="trash" minlength="1" maxlength="20" name="trash" placeholder="Enter Trash Fee..." required />
+                            <br />
+                            <label class="textLabel" for="sewer">Sewer Charge: </label>
+                            <input type="text" id="sewer" minlength="1" maxlength="20" name="sewer" placeholder="Enter Sewer Fee..." required />
+                            <br />
+                        </div>
+                    </fieldset>
+                </fieldset>
+                <div id="postContainer">
+                    <button type="submit" id="submitButton" value="Submit Report">Submit Report</button>
+                    <button type="reset" id="resetButton" value="Reset Report">Reset Report</button>
+                </div>
+            </form>
+        </main>
+    </body>
+        

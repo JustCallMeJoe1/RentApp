@@ -14,7 +14,7 @@ exports.index = (req, res, next) => {
 
 //GET /newReport page
 exports.getNewReport = (req, res, next) => {
-    res.render("NewReportPage");
+    res.render("newReport");
 }
 
 //GET /prevReport page
