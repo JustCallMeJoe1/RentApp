@@ -12,8 +12,8 @@
             <form id="newForm" method="post" action="/newReport">
                 <fieldset class="formSection">
                     <legend class="sectionLegend">New Report:</legend>
-                    <label class="textLabel" for="month">Select Billing Month: </label>
-                    <select name="month" id="month">
+                    <label class="textLabel" for="month">Select Month: </label>
+                    <select name="month" id="month" required>
                         <option value="January">January</option>
                         <option value="February">February</option>
                         <option value="March">March</option>
@@ -27,6 +27,8 @@
                         <option value="November">November</option>
                         <option value="December">December</option>
                     </select>
+                    <label class="textLabel" for="year">Select Year: </label>
+                    <input type="number" id="year" name="year" min="2010" max="2099" step="1" value="2016" required />
                     <fieldset class="formSection">
                         <legend class="sectionLegend">Current Month Costs:</legend>
                         <div class="formComp" id="firstSection">

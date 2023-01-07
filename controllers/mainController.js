@@ -19,5 +19,5 @@ exports.getNewReport = (req, res, next) => {
 
 //GET /prevReport page
 exports.getPrevReport = (req, res, next) => {
-    res.render("PrevReportsPage");
+    res.render("viewReport");
 }
