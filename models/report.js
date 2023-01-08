@@ -18,7 +18,7 @@ const reportSchema = new Schema({
     year: {
         type: Number,
         required: [true, "The year of the report is required."],
-        min: [2010, "The minimum value for year is 2010, not allowed to go lower."],
+        min: [2022, "The minimum value for year is 2022, not allowed to go lower."],
         max: [2099, "The maximum value for year is 2099, not allowed to go higher."],
     },
 
@@ -36,11 +36,11 @@ const reportSchema = new Schema({
         maxlength: [20, "Cable field can have a maximum of 20 characters."],
     },
 
-    trash: {
+    trashService: {
         type: String,
-        required: [true, "The trash cost for the report is required."],
-        minlength: [1, "Trash field must have at least 1 character."],
-        maxlength: [20, "Trash field can have a maximum of 20 characters."],
+        required: [true, "The trash service cost for the report is required."],
+        minlength: [1, "Trash service field must have at least 1 character."],
+        maxlength: [20, "Trash service field can have a maximum of 20 characters."],
     },
 
     amenity: {
@@ -77,7 +77,52 @@ const reportSchema = new Schema({
         maxlength: [20, "Electricity field can have a maximum of 20 characters."],
     },
 
-    
+    pest: {
+        type: String,
+        required: [true, "The pest cost for the report is required."],
+        minlength: [1, "Pest field must have at least 1 character."],
+        maxlength: [20, "Pest field can have a maximum of 20 characters."],
+    },
+
+    water: {
+        type: String,
+        required: [true, "The water cost for the report is required."],
+        minlength: [1, "Water field must have at least 1 character."],
+        maxlength: [20, "Water field can have a maximum of 20 characters."],
+    },
+
+    billing: {
+        type: String,
+        required: [true, "The billing cost for the report is required."],
+        minlength: [1, "Billing field must have at least 1 character."],
+        maxlength: [20, "Billing field can have a maximum of 20 characters."],
+    },
+
+    storm: {
+        type: String,
+        required: [true, "The stormwater cost for the report is required."],
+        minlength: [1, "Stormwater field must have at least 1 character."],
+        maxlength: [20, "Stormwater field can have a maximum of 20 characters."],
+    },
+
+    trash: {
+        type: String,
+        required: [true, "The trash cost for the report is required."],
+        minlength: [1, "Trash field must have at least 1 character."],
+        maxlength: [20, "Trash field can have a maximum of 20 characters."],
+    },
+
+    sewer: {
+        type: String,
+        required: [true, "The sewer cost for the report is required."],
+        minlength: [1, "Sewer field must have at least 1 character."],
+        maxlength: [20, "Sewer field can have a maximum of 20 characters."],
+    },
+
+    total: {
+        type: Number,
+    }
+
 });
 
 module.exports = mongoose.model("report", reportSchema);
