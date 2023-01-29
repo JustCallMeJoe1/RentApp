@@ -89,6 +89,52 @@ exports.submitNew = (req, res, next) => {
 
         updateAdv();
 
+        //Need to update the total now that the advacncement fees are entered.
+        async function updateAdvTotal() {
+            let updateSum = 0;
+            try {
+                const findResult = await reportModel.findOne({ month: reportDate[0], year: reportDate[1] });
+
+                updateSum += parseFloat(findResult.total); 
+                updateSum += parseFloat(findResult.pest);
+                updateSum += parseFloat(findResult.water);
+                updateSum += parseFloat(findResult.billing);
+                updateSum += parseFloat(findResult.storm);
+                updateSum += parseFloat(findResult.trash);
+                updateSum += parseFloat(findResult.sewer);
+
+            } catch(e) {
+                console.log("Error when updating advancement total...");
+                res.render("error", {error: e});
+            }
+
+            console.log(updateSum);
+
+            try {
+                const updateResult = await reportModel.findOneAndUpdate(
+                    { 
+                        month: reportDate[0], 
+                        year: reportDate[1] 
+                    },
+                    {
+                        total: updateSum
+                    },
+                    {
+                        upsert: true
+                    }
+                );
+                
+                console.log("Total updated.")
+                console.log(updateResult);
+            } catch(e) {
+                console.log("Error when updating advancement total...");
+                res.render("error", {error: e});
+            }
+
+        }
+
+        updateAdvTotal();
+
         let submittedReport = new reportModel(req.body);
 
         submittedReport.total = calcTotal(req.body);
