@@ -48,12 +48,14 @@ exports.submitNew = (req, res, next) => {
         let reportDate = reportMapping.mapAdvDate(req.body.month, req.body.year);
 
         //If the default was triggered, something has gone really wrong.
-        if(reportDate[0] || reportDate[1] === "ERROR") {
+        if(reportDate[0] === "ERROR" || reportDate[1] === "ERROR") {
             console.log("Advancement Date mapping error. Default triggered.")
             let mapError = new Error("Invalid month entered for report. Please try again.");
             mapError.status = 400;
             return next(mapError);
         }
+
+        console.log(reportDate[0], reportDate[1]);
 
         //Async function to await the updating of prev advancements, catch errors
         async function updateAdv() {
@@ -63,10 +65,22 @@ exports.submitNew = (req, res, next) => {
                         month: reportDate[0], 
                         year: reportDate[1]
                     },
-                    { //Update the report's advancement fees with the submitted (advFees array) Worry about data types.
+                    { 
+                        pest: advFees[0],
+                        water: advFees[1],
+                        billing: advFees[2],
+                        storm: advFees[3],
+                        trash: advFees[4],
+                        sewer: advFees[5],
+                    },
+                    {
+                        upsert: true
+                    }
+                );
+                
+                console.log("Advancement updated.")
+                console.log(result);
 
-                    } 
-                )
             } catch(e) {
                 console.log("Error while updating advancements...");
                 res.render("error", {error: e});
@@ -92,7 +106,7 @@ exports.submitNew = (req, res, next) => {
         }
             
         saveReport();
-    
+        
     }
 };
 

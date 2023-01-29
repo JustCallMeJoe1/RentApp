@@ -66,5 +66,5 @@ exports.mapAdvDate = (repMonth, repYear) => {
             break;
     }
 
-    return [repMonth, repYear];
+    return [mapMonth, mapYear];
 };
