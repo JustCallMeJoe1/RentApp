@@ -14,4 +14,7 @@ const prevRouter = express.Router();
 //GET /prevReport/:id
 prevRouter.get("/:id", prevController.getReport);
 
+//POST /prevReport/search
+prevRouter.post("/prevSearch", prevController.searchReport);
+
 module.exports = prevRouter;

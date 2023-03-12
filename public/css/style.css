@@ -13,7 +13,7 @@ body {
     font-family: "Sitka Small", "Times New Roman", Times, serif, Arial;
 }
 
-#container {
+.container {
     display: flex;
     justify-content: center;
     align-self: center;
@@ -83,4 +83,20 @@ a {
 
 .siteHeader {
     text-align: center;
+}
+
+.quarterHeader {
+    text-decoration: underline;
+}
+
+#reportTable {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.monthCell {
+    background-color: #ffbc86;
+    padding: 60px;
+    border: 2px black solid;
 }

@@ -7,7 +7,140 @@
 -->
 <%- include("./partials/header.ejs") %>
     <body>
+        <h1 class="siteHeader">Previous Rent Cost Reports</h2>
         <main>
-            hey check console.
+            <div class="container">
+                <div id="searchDiv">
+                    <form id="searchForm" action="/prevSearch" method="post">
+                        <fieldset class="formSection">
+                            <legend class="sectionLegend">Search By Date:</legend>
+                            <label class="textLabel" for="month">Select Month: </label>
+                            <select name="month" id="month" required>
+                                <option value="January">January</option>
+                                <option value="February">February</option>
+                                <option value="March">March</option>
+                                <option value="April">April</option>
+                                <option value="May">May</option>
+                                <option value="June">June</option>
+                                <option value="July">July</option>
+                                <option value="August">August</option>
+                                <option value="September">September</option>
+                                <option value="October">October</option>
+                                <option value="November">November</option>
+                                <option value="December">December</option>
+                            </select>
+                            <label class="textLabel" for="year">Select Year: </label>
+                            <input type="number" id="year" name="year" min="2022" max="2099" step="1" value="2022" required />
+                            <br />
+                        </fieldset>
+                        <br />
+                        <div class="postContainer">
+                            <button type="submit" id="submitButton" value="Search">Search</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <br />
+            <h1 class="siteHeader">Year</h1>
+            <div class="reportTableContainer">
+                <table id="reportTable">
+                    <div id="q1">
+                        <td class="quarterHeader"><h2>Quarter 1</h2></td>
+                        <tr>
+                            <td class="monthCell">
+                                <div class="monthTitle">
+                                    <h3>January</h3>
+                                    <p>Total Cost: </p>
+                                    <p>Joe Cost: </p>
+                                    <p>Mackay Cost: </p>
+                                </div>
+                            </td>
+                            <td class="monthCell">
+                                <h3>February</h3>
+                                <p>Total Cost: </p>
+                                <p>Joe Cost: </p>
+                                <p>Mackay Cost: </p>
+                            </td>
+                            <td class="monthCell">
+                                <h3>March</h3>
+                                <p>Total Cost: </p>
+                                <p>Joe Cost: </p>
+                                <p>Mackay Cost: </p>
+                            </td>
+                        </tr>
+                    </div>
+                    <div id="q2">
+                        <td class="quarterHeader"><h2>Quarter 2</h2></td>
+                        <tr>
+                            <td class="monthCell">
+                                <h3>April</h3>
+                                <p>Total Cost: </p>
+                                <p>Joe Cost: </p>
+                                <p>Mackay Cost: </p>
+                            </td>
+                            <td class="monthCell">
+                                <h3>May</h3>
+                                <p>Total Cost: </p>
+                                <p>Joe Cost: </p>
+                                <p>Mackay Cost: </p>
+                            </td>
+                            <td class="monthCell">
+                                <h3>June</h3>
+                                <p>Total Cost: </p>
+                                <p>Joe Cost: </p>
+                                <p>Mackay Cost: </p>
+                            </td>
+                        </tr>
+                    </div>
+                    <div id="q3">
+                        <td class="quarterHeader"><h2>Quarter 3</h2></td>
+                        <tr>
+                            <td class="monthCell">
+                                <h3>July</h3>
+                                <p>Total Cost: </p>
+                                <p>Joe Cost: </p>
+                                <p>Mackay Cost: </p>
+                            </td>
+                            <td class="monthCell">
+                                <h3>August</h3>
+                                <p>Total Cost: </p>
+                                <p>Joe Cost: </p>
+                                <p>Mackay Cost: </p>
+                            </td>
+                            <td class="monthCell">
+                                <h3>September</h3>
+                                <p>Total Cost: </p>
+                                <p>Joe Cost: </p>
+                                <p>Mackay Cost: </p>
+                            </td>
+                        </tr>
+                    </div>
+                    <div id="q4">
+                        <td class="quarterHeader"><h2>Quarter 4</h2></td>
+                        <tr>
+                            <td class="monthCell">
+                                <h3>October</h3>
+                                <p>Total Cost: </p>
+                                <p>Joe Cost: </p>
+                                <p>Mackay Cost: </p>
+                            </td>
+                            <td class="monthCell">
+                                <h3>November</h3>
+                                <p>Total Cost: </p>
+                                <p>Joe Cost: </p>
+                                <p>Mackay Cost: </p>
+                            </td>
+                            <td class="monthCell">
+                                <h3>December</h3>
+                                <p>Total Cost: </p>
+                                <p>Joe Cost: </p>
+                                <p>Mackay Cost: </p>
+                            </td>
+                        </tr>
+                    </div>
+                </table>
+                <br />
+                <br />
+            </div>
         </main>
     </body>

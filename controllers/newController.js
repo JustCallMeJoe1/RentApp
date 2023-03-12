@@ -9,7 +9,6 @@
 
 const reportModel = require("../models/report");
 const reportMapping = require("../controllers/reportMapping");
-const report = require("../models/report");
 
 //Post method for submitting a new report to the database
 exports.submitNew = (req, res, next) => {

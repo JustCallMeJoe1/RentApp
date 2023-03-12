@@ -7,6 +7,8 @@
 
 */
 
+const reportModel = require("../models/report");
+
 //GET / index page
 exports.index = (req, res, next) => {
     res.render("index");
@@ -19,5 +21,7 @@ exports.getNewReport = (req, res, next) => {
 
 //GET /prevReport page
 exports.getPrevReport = (req, res, next) => {
+    //Grab the computer's current year. Display all 12 months from that year
+
     res.render("viewReport");
 }

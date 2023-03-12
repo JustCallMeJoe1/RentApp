@@ -11,3 +11,7 @@
 exports.getReport = (req, res, next) => {
     
 };
+
+exports.searchReport = (req, res, next) => {
+    
+}
