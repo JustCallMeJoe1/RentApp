@@ -100,3 +100,13 @@ a {
     padding: 60px;
     border: 2px black solid;
 }
+
+.searchSection {
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 10px;
+}
+
+.searchLegend {
+    text-align: center;
+}

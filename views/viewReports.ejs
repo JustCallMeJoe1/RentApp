@@ -1,0 +1,289 @@
+<!--
+
+    Author: Joe Strickland
+    EJS Template page for viewing report pages
+    Date: January 7th, 2023
+
+-->
+<%- include("./partials/header.ejs") %>
+    <body>
+        <h1 class="siteHeader">Previous Rent Cost Reports</h2>
+        <main>
+            <div class="container">
+                <div id="searchDiv">
+                    <form id="searchForm" action="/prevSearch" method="post">
+                        <fieldset class="searchSection">
+                            <legend class="searchLegend">Search By Date</legend>
+                            <label class="textLabel" for="year">Select Year: </label>
+                            <input type="number" id="year" name="year" min="2022" max="2099" step="1" value="2022" required />
+                            <br />
+                            <br />
+                            <div class="postContainer">
+                                <button type="submit" id="submitButton" value="Search">Search</button>
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+            <br />
+            <h1 class="siteHeader"><%= currentYear %>'s Reports</h1>
+            <div class="reportTableContainer">
+                <table id="reportTable">
+                    <div id="q1">
+                        <td class="quarterHeader"><h2>Quarter 1</h2></td>
+                        <tr>
+                            <% if (existingMonths.includes("January")) { %>
+                                <% for(let i = 0; i < result.length; i++) { %>
+                                    <% if (result[i].month === "January") { %>
+                                        <td class="monthCell">
+                                            <div class="monthTitle">
+                                                <h3>January</h3>
+                                                <p>Total Cost: $<%= result[i].total %></p>
+                                            </div>
+                                        </td>
+                                    <% } %>
+                                <% } %> 
+                            <% } else { %>
+                                <td class="monthCell">
+                                    <div class="monthTitle">
+                                        <h3>No January Report...</h3>
+                                    </div>
+                                </td>
+                            <% }; %>
+
+
+                            <% if (existingMonths.includes("February")) { %>
+                                <% for(let i = 0; i < result.length; i++) { %>
+                                    <% if (result[i].month === "February") { %>
+                                        <td class="monthCell">
+                                            <div class="monthTitle">
+                                                <h3>February</h3>
+                                                <p>Total Cost: $<%= result[i].total %></p>
+                                            </div>
+                                        </td>
+                                    <% } %>
+                                <% } %> 
+                            <% } else { %>
+                                <td class="monthCell">
+                                    <div class="monthTitle">
+                                        <h3>No February Report...</h3>
+                                    </div>
+                                </td>
+                            <% }; %>
+
+                            
+                            <% if (existingMonths.includes("March")) { %>
+                                <% for(let i = 0; i < result.length; i++) { %>
+                                    <% if (result[i].month === "March") { %>
+                                        <td class="monthCell">
+                                            <div class="monthTitle">
+                                                <h3>March</h3>
+                                                <p>Total Cost: $<%= result[i].total %></p>
+                                            </div>
+                                        </td>
+                                    <% } %>
+                                <% } %> 
+                            <% } else { %>
+                                <td class="monthCell">
+                                    <div class="monthTitle">
+                                        <h3>No March Report...</h3>
+                                    </div>
+                                </td>
+                            <% }; %>
+                        </tr>
+                    </div>
+                    <div id="q2">
+                        <td class="quarterHeader"><h2>Quarter 2</h2></td>
+                        <tr>
+                            <% if (existingMonths.includes("April")) { %>
+                                <% for(let i = 0; i < result.length; i++) { %>
+                                    <% if (result[i].month === "April") { %>
+                                        <td class="monthCell">
+                                            <div class="monthTitle">
+                                                <h3>April</h3>
+                                                <p>Total Cost: $<%= result[i].total %></p>
+                                            </div>
+                                        </td>
+                                    <% } %>
+                                <% } %> 
+                            <% } else { %>
+                                <td class="monthCell">
+                                    <div class="monthTitle">
+                                        <h3>No April Report...</h3>
+                                    </div>
+                                </td>
+                            <% }; %>
+
+
+                            <% if (existingMonths.includes("May")) { %>
+                                <% for(let i = 0; i < result.length; i++) { %>
+                                    <% if (result[i].month === "May") { %>
+                                        <td class="monthCell">
+                                            <div class="monthTitle">
+                                                <h3>May</h3>
+                                                <p>Total Cost: $<%= result[i].total %></p>
+                                            </div>
+                                        </td>
+                                    <% } %>
+                                <% } %> 
+                            <% } else { %>
+                                <td class="monthCell">
+                                    <div class="monthTitle">
+                                        <h3>No May Report...</h3>
+                                    </div>
+                                </td>
+                            <% }; %>
+
+                            
+                            <% if (existingMonths.includes("June")) { %>
+                                <% for(let i = 0; i < result.length; i++) { %>
+                                    <% if (result[i].month === "June") { %>
+                                        <td class="monthCell">
+                                            <div class="monthTitle">
+                                                <h3>June</h3>
+                                                <p>Total Cost: $<%= result[i].total %></p>
+                                            </div>
+                                        </td>
+                                    <% } %>
+                                <% } %> 
+                            <% } else { %>
+                                <td class="monthCell">
+                                    <div class="monthTitle">
+                                        <h3>No June Report...</h3>
+                                    </div>
+                                </td>
+                            <% }; %>
+                        </tr>
+                    </div>
+                    <div id="q3">
+                        <td class="quarterHeader"><h2>Quarter 3</h2></td>
+                        <tr>
+                            <% if (existingMonths.includes("July")) { %>
+                                <% for(let i = 0; i < result.length; i++) { %>
+                                    <% if (result[i].month === "July") { %>
+                                        <td class="monthCell">
+                                            <div class="monthTitle">
+                                                <h3>July</h3>
+                                                <p>Total Cost: $<%= result[i].total %></p>
+                                            </div>
+                                        </td>
+                                    <% } %>
+                                <% } %> 
+                            <% } else { %>
+                                <td class="monthCell">
+                                    <div class="monthTitle">
+                                        <h3>No July Report...</h3>
+                                    </div>
+                                </td>
+                            <% }; %>
+
+
+                            <% if (existingMonths.includes("August")) { %>
+                                <% for(let i = 0; i < result.length; i++) { %>
+                                    <% if (result[i].month === "August") { %>
+                                        <td class="monthCell">
+                                            <div class="monthTitle">
+                                                <h3>August</h3>
+                                                <p>Total Cost: $<%= result[i].total %></p>
+                                            </div>
+                                        </td>
+                                    <% } %>
+                                <% } %> 
+                            <% } else { %>
+                                <td class="monthCell">
+                                    <div class="monthTitle">
+                                        <h3>No August Report...</h3>
+                                    </div>
+                                </td>
+                            <% }; %>
+
+                            
+                            <% if (existingMonths.includes("September")) { %>
+                                <% for(let i = 0; i < result.length; i++) { %>
+                                    <% if (result[i].month === "September") { %>
+                                        <td class="monthCell">
+                                            <div class="monthTitle">
+                                                <h3>September</h3>
+                                                <p>Total Cost: $<%= result[i].total %></p>
+                                            </div>
+                                        </td>
+                                    <% } %>
+                                <% } %> 
+                            <% } else { %>
+                                <td class="monthCell">
+                                    <div class="monthTitle">
+                                        <h3>No September Report...</h3>
+                                    </div>
+                                </td>
+                            <% }; %>
+                        </tr>
+                    </div>
+                    <div id="q4">
+                        <td class="quarterHeader"><h2>Quarter 4</h2></td>
+                        <tr>
+                            <% if (existingMonths.includes("October")) { %>
+                                <% for(let i = 0; i < result.length; i++) { %>
+                                    <% if (result[i].month === "October") { %>
+                                        <td class="monthCell">
+                                            <div class="monthTitle">
+                                                <h3>October</h3>
+                                                <p>Total Cost: $<%= result[i].total %></p>
+                                            </div>
+                                        </td>
+                                    <% } %>
+                                <% } %> 
+                            <% } else { %>
+                                <td class="monthCell">
+                                    <div class="monthTitle">
+                                        <h3>No October Report...</h3>
+                                    </div>
+                                </td>
+                            <% }; %>
+
+
+                            <% if (existingMonths.includes("November")) { %>
+                                <% for(let i = 0; i < result.length; i++) { %>
+                                    <% if (result[i].month === "November") { %>
+                                        <td class="monthCell">
+                                            <div class="monthTitle">
+                                                <h3>November</h3>
+                                                <p>Total Cost: $<%= result[i].total %></p>
+                                            </div>
+                                        </td>
+                                    <% } %>
+                                <% } %> 
+                            <% } else { %>
+                                <td class="monthCell">
+                                    <div class="monthTitle">
+                                        <h3>No November Report...</h3>
+                                    </div>
+                                </td>
+                            <% }; %>
+
+                            
+                            <% if (existingMonths.includes("December")) { %>
+                                <% for(let i = 0; i < result.length; i++) { %>
+                                    <% if (result[i].month === "December") { %>
+                                        <td class="monthCell">
+                                            <div class="monthTitle">
+                                                <h3>December</h3>
+                                                <p>Total Cost: $<%= result[i].total %></p>
+                                            </div>
+                                        </td>
+                                    <% } %>
+                                <% } %> 
+                            <% } else { %>
+                                <td class="monthCell">
+                                    <div class="monthTitle">
+                                        <h3>No December Report...</h3>
+                                    </div>
+                                </td>
+                            <% }; %>
+                        </tr>
+                    </div>
+                </table>
+                <br />
+                <br />
+            </div>
+        </main>
+    </body>
