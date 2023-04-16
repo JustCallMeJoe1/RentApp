@@ -11,11 +11,11 @@
         <main>
             <div class="container">
                 <div id="searchDiv">
-                    <form id="searchForm" action="/prevSearch" method="post">
+                    <form id="searchForm" action="/prevReport/search" method="post">
                         <fieldset class="searchSection">
                             <legend class="searchLegend">Search By Date</legend>
                             <label class="textLabel" for="year">Select Year: </label>
-                            <input type="number" id="year" name="year" min="2022" max="2099" step="1" value="2022" required />
+                            <input type="number" id="year" name="year" min="2022" max="2099" step="1" value=<%= searchYear %> required />
                             <br />
                             <br />
                             <div class="postContainer">
@@ -26,7 +26,7 @@
                 </div>
             </div>
             <br />
-            <h1 class="siteHeader"><%= currentYear %>'s Reports</h1>
+            <h1 class="siteHeader"><%= searchYear %>'s Reports</h1>
             <div class="reportTableContainer">
                 <table id="reportTable">
                     <div id="q1">

@@ -22,18 +22,18 @@ exports.getNewReport = (req, res, next) => {
 //GET /prevReport page
 exports.getPrevReport = (req, res, next) => {
     //Grab the computer's current year. Display all 12 months from that year
-    //let currentYear = 2022;
-    let currentYear = new Date().getFullYear();
+    //let searchYear = 2022;
+    let searchYear = new Date().getFullYear();
 
     async function getReportsForYear() {
         try {
-            const result = await reportModel.find({ year: currentYear });
+            const result = await reportModel.find({ year: searchYear });
             let existingMonths = [];
             result.forEach(report => {
                 existingMonths.push(report.month)    
             });
             
-            res.render("viewReports", {currentYear, existingMonths, result});
+            res.render("viewReports", {searchYear, existingMonths, result});
         } catch(e) {
             console.log("Error when collecting reports...");
             next("error", {error: e});
