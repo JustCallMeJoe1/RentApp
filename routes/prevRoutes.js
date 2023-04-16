@@ -12,7 +12,7 @@ const prevController = require("../controllers/prevController");
 const prevRouter = express.Router();
 
 //GET /prevReport/:id
-prevRouter.get("/:id", prevController.getReport);
+prevRouter.get("/report/:id", prevController.getReport);
 
 //POST /prevReport/search
 prevRouter.post("/search", prevController.searchReport);
