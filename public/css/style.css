@@ -96,7 +96,7 @@ a {
 }
 
 .monthCell {
-    background-color: #ffbc86;
+    background-color: #fd9e4b;
     padding: 60px;
     border: 2px black solid;
 }
@@ -109,4 +109,56 @@ a {
 
 .searchLegend {
     text-align: center;
+}
+
+#tableBreakdown {
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
+    border: 5px solid black;
+    background-color:#ffbc86
+}
+
+.column1 {
+    padding: 1em;
+    border-bottom: 1px solid black;
+    border-right: 1px solid black;
+}
+
+.column2 {
+    padding: 1em;
+    border-bottom: 1px solid black;
+}
+
+.rowHeader {
+    border-right: 1px solid black;
+    padding: 1em;
+    border-bottom: 1px solid black;
+    text-align: center;
+    font-weight: bold;
+}
+
+#joeHeader {
+    margin-left: 0;
+    border-bottom: 1px solid black;
+    border-right: 1px solid black;
+    padding: 1em;
+}
+
+#mackayHeader {
+    margin-left: 0;
+    padding: 1em;
+    border-bottom: 1px solid black;
+}
+
+#noHeader {
+    border-bottom: 1px solid black;
+}
+
+#overText {
+    text-align: center;
+}
+
+#tableBreakdown tr:nth-child(odd) {
+    background-color:#fd9e4b
 }

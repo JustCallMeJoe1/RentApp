@@ -7,79 +7,96 @@
 -->
 <%- include("./partials/header.ejs") %>
     <body>
-        <h1 class="siteHeader">%Month% Report</h1>
+        <h1 class="siteHeader"><%= currentMonth %>'s Report</h1>
         <main>
             <div id="singleReportTable">
-                <table>
+                <table id="tableBreakdown">
                     <thead>
                       <tr>
-                        <th>Joe's Cost</th>
-                        <th>Mackay's Cost</th>
+                        <th class="rowHeader" id="noHeader">&nbsp;</th>
+                        <th class="column1" id="joeHeader">Joe's Cost</th>
+                        <th class="column2" id="mackayHeader">Mackay's Cost</th>
                       </tr>
                     </thead>
                     <tbody>
                       <tr>
-                        <td>Rent: </td>
-                        <td>Rent: </td>
+                        <td class="rowHeader">Rent</td>
+                        <td class="column1">$<%= joeHalf[0].toFixed(2) %></td>
+                        <td class="column2">$<%= mackayHalf[0].toFixed(2) %></td>
                       </tr>
                       <tr>
-                        <td>Cable:</td>
-                        <td>Cable:</td>
+                        <td class="rowHeader">Cable</td>
+                        <td class="column1">$<%= joeHalf[1].toFixed(2) %></td>
+                        <td class="column2">$<%= mackayHalf[1].toFixed(2) %></td>
                       </tr>
                       <tr>
-                        <td>Trash Service Fee: </td>
-                        <td>Trash Service Fee:</td>
+                        <td class="rowHeader">Trash Service Fee</td>
+                        <td class="column1">$<%= joeHalf[2].toFixed(2) %></td>
+                        <td class="column2">$<%= mackayHalf[2].toFixed(2) %></td>
                       </tr>
                       <tr>
-                        <td>Amenity Fee: </td>
-                        <td>Amenity Fee:</td>
+                        <td class="rowHeader">Amenity Fee</td>
+                        <td class="column1">$<%= joeHalf[3].toFixed(2) %></td>
+                        <td class="column2">$<%= mackayHalf[3].toFixed(2) %></td>
                       </tr>
                       <tr>
-                        <td>Alarm Fee:</td>
-                        <td>Alarm Fee:</td>
+                        <td class="rowHeader">Alarm Fee</td>
+                        <td class="column1">$<%= joeHalf[4].toFixed(2) %></td>
+                        <td class="column2">$<%= mackayHalf[4].toFixed(2) %></td>
                       </tr>
                       <tr>
-                        <td>Door To Door Fee: </td>
-                        <td>Door To Door Fee: </td>
+                        <td class="rowHeader">Door To Door Fee</td>
+                        <td class="column1">$<%= joeHalf[5].toFixed(2) %></td>
+                        <td class="column2">$<%= mackayHalf[5].toFixed(2) %></td>
                       </tr>
                       <tr>
-                        <td>Insurance:</td>
-                        <td>Insurance:</td>
+                        <td class="rowHeader">Insurance</td>
+                        <td class="column1">N/A</td>
+                        <td class="column2">$<%= mackayHalf[13].toFixed(2) %></td>
                       </tr>
                       <tr>
-                        <td>Electricity Fee:</td>
-                        <td>Electricity Fee:</td>
+                        <td class="rowHeader">Electricity Fee</td>
+                        <td class="column1">$<%= joeHalf[6].toFixed(2) %></td>
+                        <td class="column2">$<%= mackayHalf[6].toFixed(2) %></td>
                       </tr>
                       <tr>
-                        <td>Pest Fee:</td>
-                        <td>Pest Fee:</td>
+                        <td class="rowHeader">Pest Fee</td>
+                        <td class="column1">$<%= joeHalf[7].toFixed(2) %></td>
+                        <td class="column2">$<%= mackayHalf[7].toFixed(2) %></td>
                       </tr>
                       <tr>
-                        <td>Water Fee: </td>
-                        <td>Water Fee:</td>
+                        <td class="rowHeader">Water Fee</td>
+                        <td class="column1">$<%= joeHalf[8].toFixed(2) %></td>
+                        <td class="column2">$<%= mackayHalf[8].toFixed(2) %></td>
                       </tr>
                       <tr>
-                        <td>Billing Fee: </td>
-                        <td>Billing Fee:</td>
+                        <td class="rowHeader">Billing Fee</td>
+                        <td class="column1">$<%= joeHalf[9].toFixed(2) %></td>
+                        <td class="column2">$<%= mackayHalf[9].toFixed(2) %></td>
                       </tr>
                       <tr>
-                        <td>Storm Fee:</td>
-                        <td>Storm Fee:</td>
+                        <td class="rowHeader">Storm Fee</td>
+                        <td class="column1">$<%= joeHalf[10].toFixed(2) %></td>
+                        <td class="column2">$<%= mackayHalf[10].toFixed(2) %></td>
                       </tr>
                       <tr>
-                        <td>Trash Fee:</td>
-                        <td>Trash Fee:</td>
+                        <td class="rowHeader">Trash Fee</td>
+                        <td class="column1">$<%= joeHalf[11].toFixed(2) %></td>
+                        <td class="column2">$<%= mackayHalf[11].toFixed(2) %></td>
                       </tr>
                       <tr>
-                        <td>Sewer Fee:</td>
-                        <td>Sewer Fee:</td>
+                        <td class="rowHeader">Sewer Fee</td>
+                        <td class="column1">$<%= joeHalf[12].toFixed(2) %></td>
+                        <td class="column2">$<%= mackayHalf[12].toFixed(2) %></td>
                       </tr>
                       <tr>
-                        <td>Total:</td>
-                        <td>Total:</td>
+                        <td class="rowHeader">Person's Total</td>
+                        <td class="column1">$<%= joeHalf[14].toFixed(2) %></td>
+                        <td class="column2">$<%= mackayHalf[14].toFixed(2) %></td>
                       </tr>
                     </tbody>
                 </table>
+                <h1 id="overText">Overall Total: $<%= overallTotal.toFixed(2) %></h1>
             </div>
         </main>
     </body>

@@ -16,7 +16,9 @@ exports.index = (req, res, next) => {
 
 //GET /newReport page
 exports.getNewReport = (req, res, next) => {
-    res.render("newReport");
+    let currentYear = new Date().getFullYear();
+
+    res.render("newReport", {currentYear});
 }
 
 //GET /prevReport page
